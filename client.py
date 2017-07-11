@@ -1,6 +1,5 @@
 import os
 
-# from mocking import UserClient
 from birdy.twitter import UserClient
 
 
