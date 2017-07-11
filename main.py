@@ -1,16 +1,9 @@
-# from birdy.twitter import UserClient
-from mocking import UserClient
+import random
 
-CONSUMER_KEY = ''
-CONSUMER_SECRET = ''
-ACCESS_TOKEN = ''
-ACCESS_TOKEN_SECRET = ''
+from client import CLIENT
 
-client = UserClient(
-    CONSUMER_KEY,
-    CONSUMER_SECRET,
-    ACCESS_TOKEN,
-    ACCESS_TOKEN_SECRET,
-)
 
-response = client.api.statuses.update.post(status='Hello World!')
+if __name__ == '__main__':
+    die_result = random.randint(1,6)
+    status = 'I just threw a die and the result was {}'.format(die_result)
+    response = CLIENT.api.statuses.update.post(status=status)
