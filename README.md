@@ -17,3 +17,8 @@ The simplest possible twitter bot
     - `pip install -r requirements.txt`
 - Run it: `python main.py`
 - Check twitter account
+
+## Known issues
+
+- The client raises an exception if we send the same status update, which with
+the current implementation will happen very quickly.
