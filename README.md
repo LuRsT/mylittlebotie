@@ -18,6 +18,13 @@ The simplest possible twitter bot
 - Run it: `python main.py`
 - Check twitter account
 
+## How to make it bot-like
+
+Add this line to your crontab:
+
+    0 * * * * python main.py
+
+
 ## Known issues
 
 - The client raises an exception if we send the same status update, which with

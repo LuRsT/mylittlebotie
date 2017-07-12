@@ -11,8 +11,13 @@ def send_twitt(status):
         os.environ['TWITTER_ACCESS_TOKEN'],
         os.environ['TWITTER_ACCESS_TOKEN_SECRET'],
     )
-    client.api.statuses.update.post(status=status)
-    print("You just sent a twitt! Good job!")
+    try:
+        client.api.statuses.update.post(status=status)
+    except:
+        print("Sorry, something has gone wrong...")
+    else:
+        print("You just sent a twitt! Good job!")
+
 
 
 if __name__ == '__main__':
