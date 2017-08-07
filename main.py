@@ -1,5 +1,5 @@
 import os
-import random
+import requests
 
 from birdy.twitter import UserClient
 
@@ -14,13 +14,12 @@ def send_twitt(status):
     try:
         client.api.statuses.update.post(status=status)
     except:
-        print("Sorry, something has gone wrong...")
+        print("Sorry, something has gone wrong...try again?")
     else:
         print("You just sent a twitt! Good job!")
 
 
-
 if __name__ == '__main__':
-    die_result = random.randint(1,6)
-    status = 'I just threw a die and the result was {}'.format(die_result)
+    request = requests.get('https://en.wikipedia.org/wiki/Special:Random')
+    status = 'Random wiki article: {}'.format(request.url)
     send_twitt(status)
